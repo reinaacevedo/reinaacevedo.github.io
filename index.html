@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- ============================================================
+     Reina Acevedo — Author Landing Page
+     Built for GitHub Pages. Drop this file in your repo as index.html.
+
+     THINGS TO PERSONALIZE (search for the word  EDIT: ):
+       1. Social links  -> the four <a> hrefs in the "Sígueme" section
+       2. About text     -> the paragraphs inside the letter (About section)
+       3. Book teaser    -> the blurb in the "Próximamente" section
+       4. Newsletter      -> optional: the <form action="..."> (see note there)
+       5. Share preview   -> the og:/twitter meta tags below (image + url)
+     ============================================================ -->
+
+<title>Reina Acevedo · Romance Author</title>
+<meta name="description" content="Reina Acevedo — romance novelist. Debut novel coming soon. Donde el corazón manda." />
+
+<!-- Social share preview (EDIT the url + image once your site is live) -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Reina Acevedo · Romance Author" />
+<meta property="og:description" content="Debut novel coming soon. Donde el corazón manda." />
+<!-- <meta property="og:url" content="https://yourusername.github.io/" /> -->
+<!-- <meta property="og:image" content="https://yourusername.github.io/preview.png" /> -->
+<!-- <meta property="og:image:width" content="1200" /> -->
+<!-- <meta property="og:image:height" content="630" /> -->
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- Inline crown favicon (gold crown on wine) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%23240710'/%3E%3Cpath d='M5 32.5L8.5 13L17 23.5L24 8L31 23.5L39.5 13L43 32.5Z' fill='%23C9A24B'/%3E%3Crect x='5' y='34.5' width='38' height='6.5' rx='2' fill='%23C9A24B'/%3E%3C/svg%3E" />
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' fill='%23240710'/%3E%3Cpath d='M5 32.5L8.5 13L17 23.5L24 8L31 23.5L39.5 13L43 32.5Z' fill='%23C9A24B'/%3E%3Crect x='5' y='34.5' width='38' height='6.5' rx='2' fill='%23C9A24B'/%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Pinyon+Script&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --ink:#240710;
+    --ink-2:#180409;
+    --velvet:#4b0f1e;
+    --crimson:#b01e34;
+    --crimson-soft:#d0576a;
+    --gold:#c9a24b;
+    --gold-glow:#ebc97e;
+    --parchment:#f2e6ce;
+    --parchment-dim:#cbb79a;
+    --letter:#f6eed8;
+    --maxw:1080px;
+    --ease:cubic-bezier(.2,.7,.2,1);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+
+  body{
+    margin:0;
+    background:
+      radial-gradient(1200px 700px at 50% -10%, rgba(176,30,52,.35), transparent 60%),
+      radial-gradient(900px 600px at 85% 20%, rgba(201,162,75,.14), transparent 55%),
+      linear-gradient(180deg,var(--ink) 0%, var(--ink-2) 55%, #120306 100%);
+    background-attachment:fixed;
+    color:var(--parchment);
+    font-family:"EB Garamond", Georgia, serif;
+    font-size:19px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  /* faint damask heart texture over everything */
+  body::before{
+    content:"";
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90' viewBox='0 0 90 90'%3E%3Cpath d='M45 62C33 53 26 46 26 38.5 26 33.3 30 29 35.2 29 38.9 29 42.3 31 45 34.2 47.7 31 51.1 29 54.8 29 60 29 64 33.3 64 38.5 64 46 57 53 45 62Z' fill='none' stroke='%23c9a24b' stroke-width='1' opacity='.05'/%3E%3C/svg%3E");
+    background-size:90px 90px;
+  }
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px;position:relative;z-index:1}
+
+  a{color:inherit}
+  img{max-width:100%}
+
+  ::selection{background:var(--crimson);color:var(--letter)}
+
+  /* ---------- reusable bits ---------- */
+  .eyebrow{
+    font-family:"Cinzel", serif;
+    font-weight:600;
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    font-size:.72rem;
+    color:var(--gold);
+    display:inline-flex;align-items:center;gap:.7em;
+  }
+  .eyebrow::before,.eyebrow::after{
+    content:""; width:26px; height:1px;
+    background:linear-gradient(90deg,transparent,var(--gold));
+  }
+  .eyebrow::after{background:linear-gradient(90deg,var(--gold),transparent)}
+
+  .script{font-family:"Pinyon Script", cursive; font-weight:400; line-height:1}
+
+  .divider{display:block;margin:0 auto;width:210px;height:auto;color:var(--gold);opacity:.85}
+
+  .reveal{opacity:0; transform:translateY(24px); transition:opacity .9s var(--ease), transform .9s var(--ease)}
+  .reveal.in{opacity:1; transform:none}
+
+  /* ---------- top nav ---------- */
+  header.nav{
+    position:sticky; top:0; z-index:20;
+    backdrop-filter:blur(8px);
+    background:linear-gradient(180deg, rgba(18,3,6,.86), rgba(18,3,6,.35) 70%, transparent);
+    border-bottom:1px solid rgba(201,162,75,.18);
+  }
+  .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:14px 26px; max-width:var(--maxw); margin:0 auto}
+  .brand{display:flex; align-items:center; gap:.6rem; text-decoration:none}
+  .brand .crown{width:26px; height:26px; color:var(--gold)}
+  .brand span{font-family:"Cinzel",serif; font-weight:600; letter-spacing:.12em; font-size:.82rem; color:var(--parchment); text-transform:uppercase}
+  nav.menu{display:flex; gap:1.6rem}
+  nav.menu a{
+    font-family:"Cinzel",serif; font-size:.68rem; letter-spacing:.2em; text-transform:uppercase;
+    text-decoration:none; color:var(--parchment-dim); transition:color .3s;
+    padding:4px 0; border-bottom:1px solid transparent;
+  }
+  nav.menu a:hover,nav.menu a:focus-visible{color:var(--gold-glow); border-bottom-color:var(--gold)}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative; text-align:center; padding:9rem 0 6rem; overflow:hidden}
+  .hero .glow{
+    position:absolute; left:50%; top:34%; transform:translate(-50%,-50%);
+    width:min(760px,88vw); aspect-ratio:1; z-index:0; pointer-events:none;
+    background:radial-gradient(circle, rgba(235,201,126,.20), rgba(176,30,52,.12) 42%, transparent 66%);
+    filter:blur(6px);
+  }
+  .hero .watermark{
+    position:absolute; left:50%; top:46%; transform:translate(-50%,-50%);
+    width:min(560px,84vw); color:var(--crimson); opacity:.14; z-index:0; pointer-events:none;
+  }
+  .hero .inner{position:relative; z-index:2}
+  .hero .eyebrow{margin-bottom:1.8rem}
+  .hero h1{
+    font-family:"Cinzel", serif; font-weight:700;
+    font-size:clamp(2.8rem, 8vw, 5.4rem);
+    line-height:1; margin:.2rem 0 0; letter-spacing:.04em;
+    color:var(--parchment);
+    text-shadow:0 2px 30px rgba(0,0,0,.5);
+  }
+  .hero h1 .a-gold{
+    background:linear-gradient(180deg,#f3dd9e,var(--gold) 55%,#9c7a2c);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .hero .tagline{
+    font-family:"Pinyon Script", cursive;
+    font-size:clamp(2.4rem, 7vw, 4rem);
+    color:var(--crimson-soft);
+    margin:.4rem 0 .2rem;
+    text-shadow:0 2px 18px rgba(176,30,52,.4);
+  }
+  .hero .sub{
+    font-style:italic; color:var(--parchment-dim);
+    font-size:1.15rem; max-width:32ch; margin:1.2rem auto 0;
+  }
+  .hero .status{
+    margin-top:2.6rem; display:inline-flex; align-items:center; gap:.8rem;
+    font-family:"Cinzel",serif; font-size:.7rem; letter-spacing:.28em; text-transform:uppercase;
+    color:var(--gold); border:1px solid rgba(201,162,75,.4); border-radius:999px; padding:.7rem 1.4rem;
+    background:rgba(75,15,30,.35);
+  }
+  .hero .status .dot{width:7px;height:7px;border-radius:50%;background:var(--crimson);box-shadow:0 0 10px var(--crimson);animation:pulse 2.4s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+  .scrollcue{margin-top:3.2rem; color:var(--gold); opacity:.7; animation:float 2.6s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+
+  /* candles flanking the hero on wide screens */
+  .candle{position:absolute; bottom:2rem; width:34px; z-index:1; opacity:.9}
+  .candle.left{left:6%}
+  .candle.right{right:6%}
+  .flame{transform-origin:center bottom; animation:flicker 1.8s infinite alternate}
+  @keyframes flicker{
+    0%{transform:scale(1) rotate(-1deg); opacity:.9}
+    40%{transform:scale(1.06,.96) rotate(1.5deg); opacity:1}
+    100%{transform:scale(.96,1.05) rotate(-1.5deg); opacity:.85}
+  }
+
+  /* ---------- sections ---------- */
+  section{position:relative; padding:6.5rem 0}
+  .section-head{text-align:center; margin-bottom:3rem}
+  .section-head h2{
+    font-family:"Cormorant Garamond", serif; font-style:italic; font-weight:500;
+    font-size:clamp(2rem,5vw,3.1rem); line-height:1.1; margin:1rem 0 .4rem; color:var(--letter);
+  }
+  .section-head .es{font-family:"EB Garamond",serif; font-style:italic; color:var(--crimson-soft); font-size:1.05rem}
+
+  /* --- coming soon / novel --- */
+  .novel{display:flex; justify-content:center}
+  .booktile{
+    position:relative; width:320px; max-width:80vw; aspect-ratio:2/3; border-radius:6px;
+    background:
+      linear-gradient(135deg, rgba(235,201,126,.14), transparent 40%),
+      linear-gradient(160deg,#5c1526, #360a15 70%);
+    border:1px solid rgba(201,162,75,.4);
+    box-shadow:
+      inset 0 0 0 6px rgba(201,162,75,.10),
+      inset 6px 0 16px rgba(0,0,0,.45),
+      0 30px 60px rgba(0,0,0,.5);
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1.2rem;
+    text-align:center; padding:2rem;
+  }
+  .booktile::before{ /* spine */
+    content:""; position:absolute; left:14px; top:8px; bottom:8px; width:2px;
+    background:linear-gradient(180deg,transparent,rgba(201,162,75,.5),transparent);
+  }
+  .booktile .seal{width:96px;height:96px}
+  .booktile .soon{
+    font-family:"Cinzel",serif; font-weight:600; letter-spacing:.24em; text-transform:uppercase;
+    font-size:.7rem; color:var(--gold);
+  }
+  .booktile .soon-title{font-family:"Cormorant Garamond",serif; font-style:italic; font-size:1.5rem; color:var(--parchment)}
+  /* --- about / the letter --- */
+  .letter{
+    max-width:720px; margin:0 auto; position:relative;
+    background:
+      linear-gradient(180deg,#fbf4e2,#f3e7cd);
+    color:#3a281c;
+    border-radius:3px;
+    padding:3.6rem 3.2rem 3rem;
+    box-shadow:0 40px 80px rgba(0,0,0,.55), inset 0 0 60px rgba(180,140,90,.25);
+    font-size:1.08rem; line-height:1.85;
+  }
+  .letter::after{ /* torn/aged edge glow */
+    content:""; position:absolute; inset:0; border-radius:3px; pointer-events:none;
+    box-shadow:inset 0 0 0 1px rgba(120,80,40,.25);
+  }
+  .letter .greeting{font-family:"Cormorant Garamond",serif; font-style:italic; font-size:1.5rem; color:#7a1224; margin:0 0 1.2rem}
+  .letter p{margin:0 0 1.15rem}
+  .letter .signoff{margin-top:2rem; font-style:italic; color:#5a3c28}
+  .letter .signature{font-family:"Pinyon Script",cursive; font-size:3rem; line-height:1; color:#7a1224; margin-top:.2rem}
+  .letter .waxseal{position:absolute; right:2.4rem; bottom:2rem; width:74px; height:74px}
+
+  /* --- follow / social --- */
+  .socials{display:flex; flex-wrap:wrap; justify-content:center; gap:1.6rem; margin-top:2.4rem}
+  .seal{
+    --sz:96px;
+    width:var(--sz); height:var(--sz); border-radius:50%;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:.35rem;
+    text-decoration:none; color:var(--gold-glow);
+    background:radial-gradient(circle at 35% 30%, #6a1526, #3a0a14 75%);
+    border:1px solid rgba(201,162,75,.45);
+    box-shadow:0 12px 26px rgba(0,0,0,.45), inset 0 0 18px rgba(0,0,0,.5);
+    transition:transform .3s var(--ease), box-shadow .3s, border-color .3s;
+  }
+  .seal svg{width:30px; height:30px}
+  .seal .label{font-family:"Cinzel",serif; font-size:.52rem; letter-spacing:.14em; text-transform:uppercase; color:var(--parchment-dim)}
+  .seal:hover,.seal:focus-visible{transform:translateY(-6px) rotate(-3deg); border-color:var(--gold); box-shadow:0 18px 34px rgba(176,30,52,.4), 0 0 24px rgba(201,162,75,.25)}
+
+  /* ---------- footer ---------- */
+  footer{text-align:center; padding:3.5rem 0 3rem; border-top:1px solid rgba(201,162,75,.16); margin-top:2rem}
+  footer .crown{width:26px;color:var(--gold);opacity:.8;margin-bottom:.6rem}
+  footer .fscript{font-family:"Pinyon Script",cursive; font-size:1.7rem; color:var(--crimson-soft)}
+  footer .fine{font-size:.78rem; color:var(--parchment-dim); letter-spacing:.06em; margin-top:.6rem}
+  footer a.top{display:inline-block; margin-top:1.2rem; font-family:"Cinzel",serif; font-size:.62rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); text-decoration:none; border-bottom:1px solid transparent}
+  footer a.top:hover{border-bottom-color:var(--gold)}
+
+  /* floating petals */
+  .petal{position:fixed; bottom:-30px; z-index:0; color:var(--crimson); pointer-events:none; will-change:transform,opacity}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:760px){
+    body{font-size:18px}
+    nav.menu{display:none}
+    .novel{grid-template-columns:1fr; gap:2.4rem}
+    .booktile{max-width:280px; margin:0 auto}
+    .letter{padding:2.6rem 1.6rem 2.4rem}
+    .letter .waxseal{width:56px;height:56px; right:1.2rem; bottom:1.2rem}
+    .candle{display:none}
+    .hero{padding:6rem 0 4rem}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none !important; scroll-behavior:auto !important}
+    .reveal{opacity:1; transform:none; transition:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <svg class="crown" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M6 34l3-18 8 9 7-13 7 13 8-9 3 18z"/><rect x="6" y="35" width="36" height="5" rx="1"/></svg>
+      <span>Reina Acevedo</span>
+    </a>
+    <nav class="menu" aria-label="Primary">
+      <a href="#novel">La Novela</a>
+      <a href="#about">Sobre la Autora</a>
+      <a href="#follow">Sígueme</a>
+    </nav>
+  </div>
+</header>
+
+<span id="top"></span>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" aria-label="Introduction">
+  <div class="glow"></div>
+  <svg class="watermark" viewBox="0 0 120 120" fill="currentColor" aria-hidden="true">
+    <path d="M60 104C36 88 18 74 18 52.5 18 39 28 29 40.5 29 49 29 56 34 60 41 64 34 71 29 79.5 29 92 29 102 39 102 52.5 102 74 84 88 60 104Z"/>
+  </svg>
+
+  <!-- candles -->
+  <svg class="candle left" viewBox="0 0 40 120" aria-hidden="true">
+    <ellipse class="flame" cx="20" cy="18" rx="6" ry="12" fill="#ebc97e"/>
+    <ellipse cx="20" cy="20" rx="3" ry="7" fill="#fff4d6"/>
+    <rect x="14" y="30" width="12" height="80" rx="3" fill="#efe1c6"/>
+    <rect x="14" y="30" width="4" height="80" rx="2" fill="#fff8ea" opacity=".6"/>
+    <rect x="10" y="108" width="20" height="8" rx="2" fill="#c9a24b"/>
+  </svg>
+  <svg class="candle right" viewBox="0 0 40 120" aria-hidden="true">
+    <ellipse class="flame" cx="20" cy="18" rx="6" ry="12" fill="#ebc97e"/>
+    <ellipse cx="20" cy="20" rx="3" ry="7" fill="#fff4d6"/>
+    <rect x="14" y="30" width="12" height="80" rx="3" fill="#efe1c6"/>
+    <rect x="14" y="30" width="4" height="80" rx="2" fill="#fff8ea" opacity=".6"/>
+    <rect x="10" y="108" width="20" height="8" rx="2" fill="#c9a24b"/>
+  </svg>
+
+  <div class="wrap inner">
+    <span class="eyebrow">Author &middot; Novelista</span>
+    <h1>Reina <span class="a-gold">Acevedo</span></h1>
+    <p class="tagline" lang="es">Donde el corazón manda</p>
+    <p class="sub">Romance stories written in ink, wax, and candlelight.</p>
+
+    <div class="status">
+      <span class="dot"></span>
+      <span lang="es">Debut Novel &middot; Próximamente</span>
+    </div>
+
+    <div class="scrollcue" aria-hidden="true">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== NOVEL / COMING SOON ===================== -->
+<section id="novel">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" lang="es">Próximamente &middot; Coming Soon</span>
+      <h2>A love story is about to begin</h2>
+      <p class="es" lang="es">Una historia de amor está por comenzar.</p>
+    </div>
+
+    <div class="novel reveal">
+      <!-- sealed placeholder "cover" -->
+      <div class="booktile" role="img" aria-label="Debut novel, title to be revealed">
+        <svg class="seal" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="46" fill="#8b1424"/>
+          <circle cx="50" cy="50" r="46" fill="none" stroke="#c9a24b" stroke-width="1.5" opacity=".6"/>
+          <g stroke="#5c0d18" stroke-width="1" opacity=".5">
+            <circle cx="50" cy="50" r="40" fill="none" stroke-dasharray="3 3"/>
+          </g>
+          <path d="M50 72C38 63 30 56 30 47.5 30 41 35 36 41 36 45 36 48 38 50 41 52 38 55 36 59 36 65 36 70 41 70 47.5 70 56 62 63 50 72Z" fill="#efe1c6"/>
+        </svg>
+        <span class="soon" lang="es">Próximamente</span>
+        <span class="soon-title">Title to be revealed</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="divider reveal" viewBox="0 0 220 24" fill="none" aria-hidden="true">
+  <path d="M0 12h86M134 12h86" stroke="currentColor" stroke-width="1"/>
+  <path d="M110 20c-6-4.5-10-8-10-12 0-3 2.5-5 5.5-5 2 0 3.7 1 4.5 2.6.8-1.6 2.5-2.6 4.5-2.6 3 0 5.5 2 5.5 5 0 4-4 7.5-10 12Z" fill="currentColor"/>
+  <circle cx="92" cy="12" r="2" fill="currentColor"/><circle cx="128" cy="12" r="2" fill="currentColor"/>
+</svg>
+
+<!-- ===================== ABOUT / THE LETTER ===================== -->
+<section id="about">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" lang="es">Sobre la Autora &middot; About</span>
+      <h2>A letter from the desk of the queen</h2>
+      <p class="es" lang="es">Unas palabras de mi puño y letra.</p>
+    </div>
+
+    <div class="letter reveal">
+      <p class="greeting" lang="es">Querido lector,</p>
+      <p>These stories have lived in me for more than ten years. I carried them quietly &mdash; a cast of characters, a handful of first kisses, a few endings I already knew by heart &mdash; long before I ever let myself write a single word of them down.</p>
+      <p>Life had other plans first. There were curveballs and hard seasons, years spent in the tech world building things that mattered in a different way. But through all of it, these characters never left. They waited in my heart, patient and stubborn, until I finally found the courage to give them a page.</p>
+      <p>Choosing to write romance &mdash; to trade the certainty of one life for the vulnerability of this one &mdash; was the bravest thing I've done. And my hope is simple: that when you read these stories, you feel the passion I poured into them, and that somewhere in them you recognize a little piece of your own heart.</p>
+      <p>Thank you for being here at the very beginning.</p>
+
+      <p class="signoff" lang="es">Con cariño,</p>
+      <p class="signature">Reina</p>
+
+      <svg class="waxseal" viewBox="0 0 80 80" aria-hidden="true">
+        <circle cx="40" cy="40" r="34" fill="#a3182b"/>
+        <circle cx="40" cy="40" r="34" fill="none" stroke="#7a1020" stroke-width="3"/>
+        <circle cx="40" cy="40" r="27" fill="none" stroke="#c9526a" stroke-width="1" opacity=".5" stroke-dasharray="2 3"/>
+        <path d="M40 56C31 49 25 44 25 37.8 25 33 28.6 29.5 33 29.5c2.9 0 5.3 1.5 7 4 1.7-2.5 4.1-4 7-4 4.4 0 8 3.5 8 8.3C55 44 49 49 40 56Z" fill="#e28aa0" opacity=".85"/>
+        <text x="40" y="46" text-anchor="middle" font-family="Cinzel, serif" font-size="16" fill="#7a1020" font-weight="700">R</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<svg class="divider reveal" viewBox="0 0 220 24" fill="none" aria-hidden="true">
+  <path d="M0 12h86M134 12h86" stroke="currentColor" stroke-width="1"/>
+  <path d="M110 20c-6-4.5-10-8-10-12 0-3 2.5-5 5.5-5 2 0 3.7 1 4.5 2.6.8-1.6 2.5-2.6 4.5-2.6 3 0 5.5 2 5.5 5 0 4-4 7.5-10 12Z" fill="currentColor"/>
+  <circle cx="92" cy="12" r="2" fill="currentColor"/><circle cx="128" cy="12" r="2" fill="currentColor"/>
+</svg>
+
+<!-- ===================== FOLLOW / SOCIAL ===================== -->
+<section id="follow">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" lang="es">Sígueme &middot; Follow Along</span>
+      <h2>Stay close to the court</h2>
+      <p class="es" lang="es">Quédate cerca &mdash; for cover reveals, release news, and more.</p>
+    </div>
+
+    <div class="socials reveal">
+      <a class="seal" href="https://www.facebook.com/reina.acevedo.author" target="_blank" rel="noopener" aria-label="Reina Acevedo on Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.2-1.3 1.4-1.3H17V2.6C16.6 2.5 15.6 2.4 14.5 2.4c-2.4 0-4 1.4-4 4.1V8.5H8v3h2.5V22h3.5v-10.5h2.6l.4-3z"/></svg>
+        <span class="label">Facebook</span>
+      </a>
+      <a class="seal" href="https://instagram.com/reina.acevedo.author" target="_blank" rel="noopener" aria-label="Reina Acevedo on Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+        <span class="label">Instagram</span>
+      </a>
+      <a class="seal" href="https://x.com/lareinawrites" target="_blank" rel="noopener" aria-label="Reina Acevedo on X">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 3h3l-7 8 8.2 10h-6.4l-5-6.2L7.8 21H4.7l7.5-8.6L4.3 3h6.6l4.5 5.9L17.5 3zm-1.1 16h1.7L8.2 4.8H6.4L16.4 19z"/></svg>
+        <span class="label">X</span>
+      </a>
+      <a class="seal" href="https://goodreads.com/reinaacevedo" target="_blank" rel="noopener" aria-label="Reina Acevedo on Goodreads">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M15.6 4.1v1.6c-.9-1.3-2.3-2-4-2C8.3 3.7 6 6.4 6 10s2.3 6.3 5.6 6.3c1.7 0 3.1-.8 4-2.1v1.9c0 2.3-1.3 3.7-3.5 3.7-1.7 0-3-.7-3.5-2.1l-1.9.6c.7 2.1 2.7 3.3 5.4 3.3 3.4 0 5.5-2 5.5-5.6V4.1h-2zm-3.7 10.4c-2.3 0-3.8-1.9-3.8-4.5s1.5-4.5 3.8-4.5 3.8 1.9 3.8 4.5-1.5 4.5-3.8 4.5z"/></svg>
+        <span class="label">Goodreads</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <svg class="crown" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M6 34l3-18 8 9 7-13 7 13 8-9 3 18z"/><rect x="6" y="35" width="36" height="5" rx="1"/></svg>
+    <div class="fscript" lang="es">Escrito con el corazón</div>
+    <p class="fine">&copy; <span id="year"></span> Reina Acevedo &middot; All rights reserved</p>
+    <a class="top" href="#top">Back to top &middot; Volver arriba</a>
+  </div>
+</footer>
+
+<script>
+  // current year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // scroll reveals
+  if ('IntersectionObserver' in window && !reduce){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:.15});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
+  }
+
+  // gentle rising heart petals
+  if(!reduce){
+    const layer = document.body;
+    const make = ()=>{
+      const p = document.createElementNS('http://www.w3.org/2000/svg','svg');
+      p.setAttribute('class','petal');
+      p.setAttribute('viewBox','0 0 24 24');
+      const size = 8 + Math.random()*12;
+      p.style.width = size+'px'; p.style.height = size+'px';
+      p.style.left = Math.random()*100 + 'vw';
+      p.style.opacity = 0.10 + Math.random()*0.22;
+      p.innerHTML = '<path d="M12 21C6 16.5 2 13 2 8.5 2 5.4 4.4 3 7.5 3 9.5 3 11.3 4 12 5.6 12.7 4 14.5 3 16.5 3 19.6 3 22 5.4 22 8.5 22 13 18 16.5 12 21Z" fill="currentColor"/>';
+      p.style.color = Math.random() > .5 ? '#b01e34' : '#c9a24b';
+      layer.appendChild(p);
+      const dur = 9000 + Math.random()*9000;
+      const drift = (Math.random()*120 - 60);
+      p.animate([
+        {transform:'translate(0, 0) rotate(0deg)'},
+        {transform:`translate(${drift}px, -110vh) rotate(${Math.random()*360}deg)`}
+      ],{duration:dur, easing:'linear'});
+      setTimeout(()=>p.remove(), dur);
+    };
+    // keep a light, ambient density
+    setInterval(make, 1400);
+    for(let i=0;i<4;i++) setTimeout(make, i*500);
+  }
+</script>
+</body>
+</html>
