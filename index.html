@@ -251,6 +251,20 @@
   }
   .bio p{color:var(--parchment-dim); font-style:italic; font-size:1.06rem; line-height:1.85; margin:0}
 
+  /* newsletter call-to-action */
+  .news-cta{max-width:600px; margin:0 auto; text-align:center}
+  .news-cta > p{color:var(--parchment-dim); font-size:1.08rem; line-height:1.8; margin:0 auto 1.9rem; max-width:48ch}
+  .btn-gold{
+    display:inline-flex; align-items:center; gap:.7rem; text-decoration:none; cursor:pointer;
+    font-family:"Cinzel",serif; font-weight:600; font-size:.74rem; letter-spacing:.18em; text-transform:uppercase;
+    padding:1rem 1.9rem; border-radius:2px; border:1px solid var(--gold);
+    color:var(--ink); background:linear-gradient(180deg,var(--gold-glow),var(--gold));
+    transition:transform .25s var(--ease), box-shadow .25s;
+  }
+  .btn-gold svg{width:18px; height:18px}
+  .btn-gold:hover,.btn-gold:focus-visible{transform:translateY(-2px); box-shadow:0 12px 28px rgba(201,162,75,.35)}
+  .news-cta .news-fine{font-size:.8rem; color:var(--parchment-dim); font-style:italic; letter-spacing:.04em; margin:1.3rem 0 0}
+
   /* --- follow / social --- */
   .socials{display:flex; flex-wrap:wrap; justify-content:center; gap:1.6rem; margin-top:2.4rem}
   .seal{
@@ -308,6 +322,7 @@
     <nav class="menu" aria-label="Primary">
       <a href="#novel">La Novela</a>
       <a href="#about">Sobre la Autora</a>
+      <a href="#newsletter">El Boletín</a>
       <a href="#follow">Sígueme</a>
     </nav>
   </div>
@@ -430,6 +445,33 @@
   <circle cx="92" cy="12" r="2" fill="currentColor"/><circle cx="128" cy="12" r="2" fill="currentColor"/>
 </svg>
 
+<!-- ===================== NEWSLETTER ===================== -->
+<section id="newsletter">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" lang="es">El Boletín &middot; The Newsletter</span>
+      <h2>Join the Court of Love</h2>
+      <p class="es" lang="es">Cartas de la reina, directo a tu correo.</p>
+    </div>
+
+    <div class="news-cta reveal">
+      <p>Sign up for my free newsletter to be the first to hear about cover reveals, release news, music, and more &mdash; little letters sent straight from my desk to yours.</p>
+      <!-- Links to your Kit newsletter landing page -->
+      <a class="btn-gold" href="https://reina-acevedo.kit.com/17fb3469e4" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5L12 13l8.5-6.5"/></svg>
+        Join the newsletter
+      </a>
+      <p class="news-fine" lang="en">Free &middot; unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+<svg class="divider reveal" viewBox="0 0 220 24" fill="none" aria-hidden="true">
+  <path d="M0 12h86M134 12h86" stroke="currentColor" stroke-width="1"/>
+  <path d="M110 20c-6-4.5-10-8-10-12 0-3 2.5-5 5.5-5 2 0 3.7 1 4.5 2.6.8-1.6 2.5-2.6 4.5-2.6 3 0 5.5 2 5.5 5 0 4-4 7.5-10 12Z" fill="currentColor"/>
+  <circle cx="92" cy="12" r="2" fill="currentColor"/><circle cx="128" cy="12" r="2" fill="currentColor"/>
+</svg>
+
 <!-- ===================== FOLLOW / SOCIAL ===================== -->
 <section id="follow">
   <div class="wrap">
@@ -440,15 +482,15 @@
     </div>
 
     <div class="socials reveal">
-      <a class="seal" href="https://www.facebook.com/reinaacevedoofficial" target="_blank" rel="noopener" aria-label="Reina Acevedo on Facebook">
+      <a class="seal" href="https://www.facebook.com/reina.acevedo.author" target="_blank" rel="noopener" aria-label="Reina Acevedo on Facebook">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.2-1.3 1.4-1.3H17V2.6C16.6 2.5 15.6 2.4 14.5 2.4c-2.4 0-4 1.4-4 4.1V8.5H8v3h2.5V22h3.5v-10.5h2.6l.4-3z"/></svg>
         <span class="label">Facebook</span>
       </a>
-      <a class="seal" href="https://instagram.com/reinaacevedoofficial" target="_blank" rel="noopener" aria-label="Reina Acevedo on Instagram">
+      <a class="seal" href="https://instagram.com/reina.acevedo.author" target="_blank" rel="noopener" aria-label="Reina Acevedo on Instagram">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
         <span class="label">Instagram</span>
       </a>
-      <a class="seal" href="https://x.com/thecourtoflove" target="_blank" rel="noopener" aria-label="Reina Acevedo on X">
+      <a class="seal" href="https://x.com/lareinawrites" target="_blank" rel="noopener" aria-label="Reina Acevedo on X">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 3h3l-7 8 8.2 10h-6.4l-5-6.2L7.8 21H4.7l7.5-8.6L4.3 3h6.6l4.5 5.9L17.5 3zm-1.1 16h1.7L8.2 4.8H6.4L16.4 19z"/></svg>
         <span class="label">X</span>
       </a>
@@ -464,7 +506,7 @@
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.5 7.2a2.8 2.8 0 00-1.98-1.98C18.75 4.75 12 4.75 12 4.75s-6.75 0-8.52.47A2.8 2.8 0 001.5 7.2C1.03 8.97 1.03 12 1.03 12s0 3.03.47 4.8a2.8 2.8 0 001.98 1.98c1.77.47 8.52.47 8.52.47s6.75 0 8.52-.47a2.8 2.8 0 001.98-1.98c.47-1.77.47-4.8.47-4.8s0-3.03-.47-4.8zM9.75 15.25v-6.5l5.5 3.25-5.5 3.25z"/></svg>
         <span class="label">YouTube</span>
       </a>
-      <a class="seal" href="https://tiktok.com/@reinaacevedoofficial" target="_blank" rel="noopener" aria-label="Reina Acevedo on TikTok">
+      <a class="seal" href="https://tiktok.com/@reina.acevedo.author" target="_blank" rel="noopener" aria-label="Reina Acevedo on TikTok">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 2h-3v13.5a2.75 2.75 0 11-2.75-2.75c.28 0 .55.04.8.12v-3.06a5.8 5.8 0 00-.8-.06 5.8 5.8 0 105.8 5.8V9.13a7 7 0 004.2 1.4V7.5a4 4 0 01-4.05-4.05c-.13-.44-.2-.9-.2-1.45z"/></svg>
         <span class="label">TikTok</span>
       </a>
