@@ -17,12 +17,12 @@
      ============================================================ -->
 
 <title>Reina Acevedo · Romance Author</title>
-<meta name="description" content="Reina Acevedo — romance novelist. Debut novel coming soon. Donde el corazón manda." />
+<meta name="description" content="Reina Acevedo — romance novelist. Signed in Blood (CupidFever, Book One) now available to preorder on Kindle. Donde el corazón manda." />
 
 <!-- Social share preview (EDIT the url + image once your site is live) -->
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Reina Acevedo · Romance Author" />
-<meta property="og:description" content="Debut novel coming soon. Donde el corazón manda." />
+<meta property="og:description" content="Signed in Blood (CupidFever, Book One) now available to preorder on Kindle. Donde el corazón manda." />
 <!-- <meta property="og:url" content="https://yourusername.github.io/" /> -->
 <!-- <meta property="og:image" content="https://yourusername.github.io/preview.png" /> -->
 <!-- <meta property="og:image:width" content="1200" /> -->
@@ -168,8 +168,10 @@
     margin-top:2.6rem; display:inline-flex; align-items:center; gap:.8rem;
     font-family:"Cinzel",serif; font-size:.7rem; letter-spacing:.28em; text-transform:uppercase;
     color:var(--gold); border:1px solid rgba(201,162,75,.4); border-radius:999px; padding:.7rem 1.4rem;
-    background:rgba(75,15,30,.35);
+    background:rgba(75,15,30,.35); text-decoration:none; transition:border-color .3s, box-shadow .3s, transform .3s;
   }
+  .hero .status:hover,.hero .status:focus-visible{border-color:var(--gold); box-shadow:0 0 22px rgba(201,162,75,.28); transform:translateY(-2px)}
+  .hero .status em{font-style:italic; font-family:"Cormorant Garamond",serif; text-transform:none; letter-spacing:.02em; font-size:1.05em}
   .hero .status .dot{width:7px;height:7px;border-radius:50%;background:var(--crimson);box-shadow:0 0 10px var(--crimson);animation:pulse 2.4s infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 
@@ -196,31 +198,33 @@
   }
   .section-head .es{font-family:"EB Garamond",serif; font-style:italic; color:var(--crimson-soft); font-size:1.05rem}
 
-  /* --- coming soon / novel --- */
+  /* --- novel / cover reveal --- */
   .novel{display:flex; justify-content:center}
-  .booktile{
-    position:relative; width:320px; max-width:80vw; aspect-ratio:2/3; border-radius:6px;
-    background:
-      linear-gradient(135deg, rgba(235,201,126,.14), transparent 40%),
-      linear-gradient(160deg,#5c1526, #360a15 70%);
-    border:1px solid rgba(201,162,75,.4);
-    box-shadow:
-      inset 0 0 0 6px rgba(201,162,75,.10),
-      inset 6px 0 16px rgba(0,0,0,.45),
-      0 30px 60px rgba(0,0,0,.5);
-    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1.2rem;
-    text-align:center; padding:2rem;
+  .book-reveal{
+    display:grid; grid-template-columns:300px 1fr; gap:3.4rem; align-items:center;
+    max-width:840px; margin:0 auto;
   }
-  .booktile::before{ /* spine */
-    content:""; position:absolute; left:14px; top:8px; bottom:8px; width:2px;
-    background:linear-gradient(180deg,transparent,rgba(201,162,75,.5),transparent);
+  .cover-link{
+    display:block; border-radius:6px; overflow:hidden; align-self:start;
+    box-shadow:0 30px 60px rgba(0,0,0,.55), 0 0 0 1px rgba(201,162,75,.45), 0 0 0 8px rgba(201,162,75,.08);
+    transition:transform .35s var(--ease), box-shadow .35s;
   }
-  .booktile .seal{width:96px;height:96px}
-  .booktile .soon{
+  .cover-link img{display:block; width:100%; height:auto}
+  .cover-link:hover,.cover-link:focus-visible{
+    transform:translateY(-6px) rotate(-.6deg);
+    box-shadow:0 42px 74px rgba(0,0,0,.6), 0 0 0 1px var(--gold), 0 0 30px rgba(201,162,75,.28);
+  }
+  .book-series{
     font-family:"Cinzel",serif; font-weight:600; letter-spacing:.24em; text-transform:uppercase;
-    font-size:.7rem; color:var(--gold);
+    font-size:.66rem; color:var(--gold); display:block; margin-bottom:.7rem;
   }
-  .booktile .soon-title{font-family:"Cormorant Garamond",serif; font-style:italic; font-size:1.5rem; color:var(--parchment)}
+  .book-title{
+    font-family:"Cormorant Garamond",serif; font-style:italic; font-weight:600;
+    font-size:clamp(2rem,5vw,2.9rem); line-height:1.05; color:var(--letter); margin:0 0 1.2rem;
+  }
+  .book-blurb{color:var(--parchment-dim); font-size:1.05rem; line-height:1.75; margin:0 0 1.7rem}
+  .book-fine{font-size:.82rem; color:var(--parchment-dim); font-style:italic; letter-spacing:.04em; margin:1.1rem 0 0}
+
   /* --- about / the letter --- */
   .letter{
     max-width:720px; margin:0 auto; position:relative;
@@ -296,8 +300,8 @@
   @media (max-width:760px){
     body{font-size:18px}
     nav.menu{display:none}
-    .novel{grid-template-columns:1fr; gap:2.4rem}
-    .booktile{max-width:280px; margin:0 auto}
+    .book-reveal{grid-template-columns:1fr; gap:2rem; justify-items:center; text-align:center}
+    .cover-link{max-width:250px}
     .letter{padding:2.6rem 1.6rem 2.4rem}
     .letter .waxseal{width:56px;height:56px; right:1.2rem; bottom:1.2rem}
     .candle{display:none}
@@ -359,10 +363,10 @@
     <p class="tagline" lang="es">Donde el corazón manda</p>
     <p class="sub">Romance stories written in ink, wax, and candlelight.</p>
 
-    <div class="status">
+    <a class="status" href="https://www.amazon.com/dp/B0HDRML4NF" target="_blank" rel="noopener">
       <span class="dot"></span>
-      <span lang="es">Debut Novel &middot; Próximamente</span>
-    </div>
+      <span><em>Signed in Blood</em> &middot; <span lang="es">Ya en preventa</span></span>
+    </a>
 
     <div class="scrollcue" aria-hidden="true">
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9l6 6 6-6"/></svg>
@@ -374,24 +378,27 @@
 <section id="novel">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow" lang="es">Próximamente &middot; Coming Soon</span>
+      <span class="eyebrow" lang="es">Ya en Preventa &middot; Now on Preorder</span>
       <h2>A love story is about to begin</h2>
       <p class="es" lang="es">Una historia de amor está por comenzar.</p>
     </div>
 
     <div class="novel reveal">
-      <!-- sealed placeholder "cover" -->
-      <div class="booktile" role="img" aria-label="Debut novel, title to be revealed">
-        <svg class="seal" viewBox="0 0 100 100" aria-hidden="true">
-          <circle cx="50" cy="50" r="46" fill="#8b1424"/>
-          <circle cx="50" cy="50" r="46" fill="none" stroke="#c9a24b" stroke-width="1.5" opacity=".6"/>
-          <g stroke="#5c0d18" stroke-width="1" opacity=".5">
-            <circle cx="50" cy="50" r="40" fill="none" stroke-dasharray="3 3"/>
-          </g>
-          <path d="M50 72C38 63 30 56 30 47.5 30 41 35 36 41 36 45 36 48 38 50 41 52 38 55 36 59 36 65 36 70 41 70 47.5 70 56 62 63 50 72Z" fill="#efe1c6"/>
-        </svg>
-        <span class="soon" lang="es">Próximamente</span>
-        <span class="soon-title">Title to be revealed</span>
+      <div class="book-reveal">
+        <a class="cover-link" href="https://www.amazon.com/dp/B0HDRML4NF" target="_blank" rel="noopener" aria-label="Preorder Signed in Blood on Amazon Kindle">
+          <img src="signed-in-blood-cover.jpg" width="1000" height="1562"
+               alt="Signed in Blood, CupidFever Book One by Reina Acevedo — cover art" />
+        </a>
+        <div class="book-meta">
+          <span class="book-series" lang="en">CupidFever &middot; Book One</span>
+          <h3 class="book-title">Signed in Blood</h3>
+          <p class="book-blurb">The debut novel is here to preorder &mdash; a high-stakes romance of ambition, chemistry, and a heart that refuses to play by the rules.</p>
+          <a class="btn-gold" href="https://www.amazon.com/dp/B0HDRML4NF" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 5h2l2 11h9l2-8H7"/><circle cx="9" cy="20" r="1.4" fill="currentColor" stroke="none"/><circle cx="17" cy="20" r="1.4" fill="currentColor" stroke="none"/></svg>
+            Preorder on Kindle
+          </a>
+          <p class="book-fine">Available now on Amazon Kindle.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -498,7 +505,7 @@
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M15.6 4.1v1.6c-.9-1.3-2.3-2-4-2C8.3 3.7 6 6.4 6 10s2.3 6.3 5.6 6.3c1.7 0 3.1-.8 4-2.1v1.9c0 2.3-1.3 3.7-3.5 3.7-1.7 0-3-.7-3.5-2.1l-1.9.6c.7 2.1 2.7 3.3 5.4 3.3 3.4 0 5.5-2 5.5-5.6V4.1h-2zm-3.7 10.4c-2.3 0-3.8-1.9-3.8-4.5s1.5-4.5 3.8-4.5 3.8 1.9 3.8 4.5-1.5 4.5-3.8 4.5z"/></svg>
         <span class="label">Goodreads</span>
       </a>
-      <a class="seal" href="https://open.spotify.com/playlist/5cwuMdOvcqV2Awju7yhhVT" target="_blank" rel="noopener" aria-label="Reina Acevedo on Spotify">
+      <a class="seal" href="https://open.spotify.com/artist/3x3EoTGWMY9FsKBB1BTWJx" target="_blank" rel="noopener" aria-label="Reina Acevedo on Spotify">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm4.6 14.4a.62.62 0 01-.86.21c-2.35-1.44-5.3-1.76-8.79-.96a.62.62 0 11-.28-1.22c3.82-.87 7.09-.5 9.72 1.11.3.18.39.57.21.86zm1.23-2.74a.78.78 0 01-1.07.26c-2.69-1.65-6.79-2.13-9.97-1.17a.78.78 0 11-.45-1.49c3.63-1.1 8.15-.56 11.24 1.33.37.23.48.71.25 1.07zm.11-2.85C14.72 8.94 9.5 8.76 6.42 9.7a.93.93 0 11-.54-1.79c3.53-1.07 9.3-.86 12.97 1.32a.94.94 0 01-.96 1.61z"/></svg>
         <span class="label">Spotify</span>
       </a>
