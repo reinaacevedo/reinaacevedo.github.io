@@ -1,18 +1,21 @@
-# Reina Acevedo — Author Landing Page
+# Reina Acevedo — Author & Filmmaker Landing Page
 
-The official landing page for romance author **Reina Acevedo**, where readers can
-stay up to date with book news and get in touch with the author.
+The official landing page for romance author and filmmaker **Reina Acevedo**,
+where visitors can watch her screen work, read her fiction, and stay in touch.
 
 *Donde el corazón manda.*
 
 ## About this page
 
-A single-page site that shares news about the debut novel and links out to
-Reina's social profiles so readers can follow along and reach out.
+A single-page site that showcases Reina's films and book, and links out to her
+newsletter, membership, and social profiles.
 
-- **Book news** — a "coming soon" moment for the debut novel.
+- **On screen** — the fantasy series *Mark of the Flame* and the festival short
+  film *Never Met, Always Known*.
+- **The book** — *Signed in Blood* (CupidFever, Book One), out now on Kindle.
 - **About the author** — a personal letter from Reina to her readers.
-- **Get in touch** — follow and connect on Facebook, Instagram, X, and Goodreads.
+- **The Court of Love** — free newsletter (Kit) and membership tiers (Ream).
+- **Follow along** — Facebook, Instagram, X, Goodreads, Spotify, YouTube, TikTok.
 
 ## Built with
 
@@ -22,4 +25,8 @@ No build step or dependencies.
 ## Files
 
 - `index.html` — the landing page.
+- `mark-of-the-flame.jpg` — still for the series *Mark of the Flame*.
+- `never-met-always-known.jpg` — still for the short film *Never Met, Always Known*.
+- `reina-singing.jpg` — photo of Reina for the music section.
+- `signed-in-blood-cover.jpg` — book cover for *Signed in Blood* (CupidFever, Book One).
 - `preview.png` — social share image (1200×630).

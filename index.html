@@ -16,18 +16,20 @@
        5. Share preview   -> the og:/twitter meta tags below (image + url)
      ============================================================ -->
 
-<title>Reina Acevedo · Romance Author</title>
-<meta name="description" content="Reina Acevedo — romance novelist. Signed in Blood (CupidFever, Book One) out now on Kindle. Donde el corazón manda." />
+<title>Reina Acevedo · Author, Filmmaker & Singer</title>
+<meta name="description" content="Reina Acevedo — romance author, filmmaker, and singer. Watch the fantasy series Mark of the Flame and the short film Never Met, Always Known, read Signed in Blood (out now on Kindle), and listen to her genre-blending music." />
 
-<!-- Social share preview (EDIT the url + image once your site is live) -->
+<!-- Social share preview -->
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Reina Acevedo · Romance Author" />
-<meta property="og:description" content="Signed in Blood (CupidFever, Book One) out now on Kindle. Donde el corazón manda." />
-<!-- <meta property="og:url" content="https://yourusername.github.io/" /> -->
-<!-- <meta property="og:image" content="https://yourusername.github.io/preview.png" /> -->
-<!-- <meta property="og:image:width" content="1200" /> -->
-<!-- <meta property="og:image:height" content="630" /> -->
+<meta property="og:title" content="Reina Acevedo · Author, Filmmaker & Singer" />
+<meta property="og:description" content="Films, a debut novel, and genre-blending music — all under one crown. Donde el corazón manda." />
+<meta property="og:url" content="https://reinaacevedo.com/" />
+<meta property="og:image" content="https://reinaacevedo.com/preview.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<link rel="canonical" href="https://reinaacevedo.com/" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://reinaacevedo.com/preview.png" />
 
 <!-- Inline crown favicon (gold crown on wine) -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%23240710'/%3E%3Cpath d='M5 32.5L8.5 13L17 23.5L24 8L31 23.5L39.5 13L43 32.5Z' fill='%23C9A24B'/%3E%3Crect x='5' y='34.5' width='38' height='6.5' rx='2' fill='%23C9A24B'/%3E%3C/svg%3E" />
@@ -164,16 +166,7 @@
     font-style:italic; color:var(--parchment-dim);
     font-size:1.15rem; max-width:32ch; margin:1.2rem auto 0;
   }
-  .hero .status{
-    margin-top:2.6rem; display:inline-flex; align-items:center; gap:.8rem;
-    font-family:"Cinzel",serif; font-size:.7rem; letter-spacing:.28em; text-transform:uppercase;
-    color:var(--gold); border:1px solid rgba(201,162,75,.4); border-radius:999px; padding:.7rem 1.4rem;
-    background:rgba(75,15,30,.35); text-decoration:none; transition:border-color .3s, box-shadow .3s, transform .3s;
-  }
-  .hero .status:hover,.hero .status:focus-visible{border-color:var(--gold); box-shadow:0 0 22px rgba(201,162,75,.28); transform:translateY(-2px)}
-  .hero .status em{font-style:italic; font-family:"Cormorant Garamond",serif; text-transform:none; letter-spacing:.02em; font-size:1.05em}
-  .hero .status .dot{width:7px;height:7px;border-radius:50%;background:var(--crimson);box-shadow:0 0 10px var(--crimson);animation:pulse 2.4s infinite}
-  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+  .hero-cta{margin-top:2.8rem; display:flex; flex-wrap:wrap; gap:1rem; justify-content:center}
 
   .scrollcue{margin-top:3.2rem; color:var(--gold); opacity:.7; animation:float 2.6s ease-in-out infinite}
   @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
@@ -197,6 +190,43 @@
     font-size:clamp(2rem,5vw,3.1rem); line-height:1.1; margin:1rem 0 .4rem; color:var(--letter);
   }
   .section-head .es{font-family:"EB Garamond",serif; font-style:italic; color:var(--crimson-soft); font-size:1.05rem}
+
+  /* --- featured films --- */
+  .films{display:grid; grid-template-columns:1fr 1fr; gap:2.2rem; max-width:1000px; margin:0 auto}
+  .film-card{
+    display:flex; flex-direction:column; overflow:hidden; border-radius:9px;
+    background:linear-gradient(180deg, rgba(75,15,30,.4), rgba(36,7,16,.55));
+    border:1px solid rgba(201,162,75,.26);
+    box-shadow:0 20px 40px rgba(0,0,0,.4);
+    transition:transform .3s var(--ease), box-shadow .3s, border-color .3s;
+  }
+  .film-card:hover{transform:translateY(-6px); border-color:var(--gold); box-shadow:0 30px 56px rgba(0,0,0,.55)}
+  .film-thumb{position:relative; display:block; aspect-ratio:16/9; overflow:hidden}
+  .film-thumb img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s var(--ease)}
+  .film-card:hover .film-thumb img{transform:scale(1.06)}
+  .film-thumb::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 55%, rgba(20,3,6,.55)); pointer-events:none}
+  .film-badge{
+    position:absolute; top:.9rem; left:.9rem; z-index:2;
+    font-family:"Cinzel",serif; font-weight:600; font-size:.58rem; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--parchment); background:rgba(20,3,6,.6); border:1px solid rgba(201,162,75,.5);
+    padding:.35rem .7rem; border-radius:999px; backdrop-filter:blur(3px);
+  }
+  .film-play{
+    position:absolute; z-index:2; left:50%; top:50%; transform:translate(-50%,-50%) scale(.9);
+    width:58px; height:58px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    background:rgba(201,162,75,.92); color:var(--ink); opacity:.85;
+    box-shadow:0 8px 24px rgba(0,0,0,.5); transition:transform .3s var(--ease), opacity .3s;
+  }
+  .film-play svg{width:24px; height:24px; margin-left:3px}
+  .film-card:hover .film-play{transform:translate(-50%,-50%) scale(1.08); opacity:1}
+  .film-body{padding:1.5rem 1.6rem 1.8rem; display:flex; flex-direction:column; flex:1}
+  .film-kicker{font-family:"Cinzel",serif; font-weight:600; letter-spacing:.16em; text-transform:uppercase; font-size:.62rem; color:var(--gold); display:flex; align-items:center; gap:.5rem; margin-bottom:.6rem}
+  .film-kicker svg{width:13px; height:13px; flex:none}
+  .film-title{font-family:"Cormorant Garamond",serif; font-style:italic; font-weight:600; font-size:1.7rem; line-height:1.1; color:var(--letter); margin:0 0 .7rem}
+  .film-logline{color:var(--parchment-dim); font-size:.99rem; line-height:1.7; margin:0 0 1.4rem; flex:1}
+  .film-actions{display:flex; flex-wrap:wrap; align-items:center; gap:.8rem 1.1rem}
+  .film-note{font-size:.78rem; color:var(--parchment-dim); font-style:italic}
+  .btn-gold.sm,.btn-ghost.sm{padding:.7rem 1.3rem; font-size:.66rem}
 
   /* --- novel / cover reveal --- */
   .novel{display:flex; justify-content:center}
@@ -224,6 +254,21 @@
   }
   .book-blurb{color:var(--parchment-dim); font-size:1.05rem; line-height:1.75; margin:0 0 1.7rem}
   .book-fine{font-size:.82rem; color:var(--parchment-dim); font-style:italic; letter-spacing:.04em; margin:1.1rem 0 0}
+
+  /* --- music --- */
+  .music-reveal{display:grid; grid-template-columns:1fr 320px; gap:3.4rem; align-items:center; max-width:860px; margin:0 auto}
+  .music-lead{color:var(--parchment-dim); font-size:1.08rem; line-height:1.8; margin:0 0 1.6rem}
+  .music-genres{list-style:none; display:flex; flex-wrap:wrap; gap:.55rem; margin:0 0 1.9rem; padding:0}
+  .genre-tag{
+    font-family:"Cinzel",serif; font-weight:600; font-size:.58rem; letter-spacing:.15em; text-transform:uppercase;
+    color:var(--gold); border:1px solid rgba(201,162,75,.4); border-radius:999px;
+    padding:.42rem .85rem; background:rgba(75,15,30,.3);
+  }
+  .music-photo{
+    aspect-ratio:1/1; border-radius:8px; overflow:hidden; align-self:center;
+    box-shadow:0 30px 60px rgba(0,0,0,.55), 0 0 0 1px rgba(201,162,75,.45), 0 0 0 8px rgba(201,162,75,.08);
+  }
+  .music-photo img{width:100%; height:100%; object-fit:cover; display:block}
 
   /* --- about / the letter --- */
   .letter{
@@ -310,6 +355,10 @@
   @media (max-width:760px){
     body{font-size:18px}
     nav.menu{display:none}
+    .films{grid-template-columns:1fr; gap:1.8rem}
+    .music-reveal{grid-template-columns:1fr; gap:2rem; justify-items:center; text-align:center}
+    .music-photo{max-width:260px; width:100%}
+    .music-genres{justify-content:center}
     .book-reveal{grid-template-columns:1fr; gap:2rem; justify-items:center; text-align:center}
     .cover-link{max-width:250px}
     .letter{padding:2.6rem 1.6rem 2.4rem}
@@ -334,7 +383,9 @@
       <span>Reina Acevedo</span>
     </a>
     <nav class="menu" aria-label="Primary">
-      <a href="#novel">La Novela</a>
+      <a href="#films">En Pantalla</a>
+      <a href="#novel">El Libro</a>
+      <a href="#music">La Música</a>
       <a href="#about">Sobre la Autora</a>
       <a href="#newsletter">El Boletín</a>
       <a href="#follow">Sígueme</a>
@@ -368,21 +419,91 @@
   </svg>
 
   <div class="wrap inner">
-    <span class="eyebrow">Author &middot; Novelista</span>
+    <span class="eyebrow">Author &middot; Filmmaker &middot; Singer</span>
     <h1>Reina <span class="a-gold">Acevedo</span></h1>
     <p class="tagline" lang="es">Donde el corazón manda</p>
-    <p class="sub">Romance stories written in ink, wax, and candlelight.</p>
+    <p class="sub">Romance stories told across the page and the screen.</p>
 
-    <a class="status" href="https://www.amazon.com/dp/B0HDRML4NF" target="_blank" rel="noopener">
-      <span class="dot"></span>
-      <span><em>Signed in Blood</em> &middot; <span lang="es">Ya disponible</span></span>
-    </a>
+    <div class="hero-cta">
+      <a class="btn-gold" href="#films">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        Watch the films
+      </a>
+      <a class="btn-ghost" href="#novel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 5.5A1.5 1.5 0 015.5 4H11v15H5.5A1.5 1.5 0 014 17.5zM20 5.5A1.5 1.5 0 0018.5 4H13v15h5.5a1.5 1.5 0 001.5-1.5z"/></svg>
+        Read the book
+      </a>
+    </div>
 
     <div class="scrollcue" aria-hidden="true">
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9l6 6 6-6"/></svg>
     </div>
   </div>
 </section>
+
+<!-- ===================== FEATURED FILMS ===================== -->
+<section id="films">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" lang="es">En Pantalla &middot; On Screen</span>
+      <h2>Stories brought to the screen</h2>
+      <p class="es" lang="es">Del corazón a la pantalla.</p>
+    </div>
+
+    <div class="films reveal">
+      <!-- Mini series -->
+      <article class="film-card">
+        <a class="film-thumb" href="https://higgsfield.ai/@reinaacevedo/projects/reina-x-shara-adventures" target="_blank" rel="noopener" aria-label="Watch Mark of the Flame">
+          <img src="mark-of-the-flame.jpg" width="1280" height="714" alt="Mark of the Flame — two sorceresses wielding fire and blood magic against monsters" />
+          <span class="film-badge">Mini Series</span>
+          <span class="film-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        </a>
+        <div class="film-body">
+          <span class="film-kicker">Fantasy Drama &middot; Guild Wars&ndash;Inspired</span>
+          <h3 class="film-title">Mark of the Flame</h3>
+          <p class="film-logline">A Guild Wars&ndash;inspired fantasy drama following two sorceresses &mdash; bound by fire and loyalty &mdash; as they face the darkness gathering at the kingdom's edge.</p>
+          <div class="film-actions">
+            <a class="btn-gold sm" href="https://higgsfield.ai/@reinaacevedo/projects/reina-x-shara-adventures" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+              Watch the series
+            </a>
+            <span class="film-note">On Higgsfield &amp; YouTube</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Short film -->
+      <article class="film-card">
+        <a class="film-thumb" href="https://higgsfield.ai/@reinaacevedo/projects/never-met-always-known" target="_blank" rel="noopener" aria-label="Watch Never Met, Always Known">
+          <img src="never-met-always-known.jpg" width="1280" height="720" alt="Never Met, Always Known — two gamers meeting face to face, a Higgsfield Global Film Festival entry" />
+          <span class="film-badge">Short Film</span>
+          <span class="film-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        </a>
+        <div class="film-body">
+          <span class="film-kicker">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 19.3 7.2 21.7l.9-5.4L4.2 8.7l5.4-.8z"/></svg>
+            Higgsfield Global Film Festival &middot; 2026
+          </span>
+          <h3 class="film-title">Never Met, Always Known</h3>
+          <p class="film-logline">Two gamers. One MMORPG. Never met in real life &mdash; until a gaming club's grand opening in New York City puts them face to face.</p>
+          <div class="film-actions">
+            <a class="btn-gold sm" href="https://higgsfield.ai/@reinaacevedo/projects/never-met-always-known" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+              Watch the film
+            </a>
+            <span class="film-note">A festival entry</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<svg class="divider reveal" viewBox="0 0 220 24" fill="none" aria-hidden="true">
+  <path d="M0 12h86M134 12h86" stroke="currentColor" stroke-width="1"/>
+  <path d="M110 20c-6-4.5-10-8-10-12 0-3 2.5-5 5.5-5 2 0 3.7 1 4.5 2.6.8-1.6 2.5-2.6 4.5-2.6 3 0 5.5 2 5.5 5 0 4-4 7.5-10 12Z" fill="currentColor"/>
+  <circle cx="92" cy="12" r="2" fill="currentColor"/><circle cx="128" cy="12" r="2" fill="currentColor"/>
+</svg>
 
 <!-- ===================== NOVEL / COMING SOON ===================== -->
 <section id="novel">
@@ -409,6 +530,47 @@
           </a>
           <p class="book-fine">Available now on Amazon Kindle.</p>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="divider reveal" viewBox="0 0 220 24" fill="none" aria-hidden="true">
+  <path d="M0 12h86M134 12h86" stroke="currentColor" stroke-width="1"/>
+  <path d="M110 20c-6-4.5-10-8-10-12 0-3 2.5-5 5.5-5 2 0 3.7 1 4.5 2.6.8-1.6 2.5-2.6 4.5-2.6 3 0 5.5 2 5.5 5 0 4-4 7.5-10 12Z" fill="currentColor"/>
+  <circle cx="92" cy="12" r="2" fill="currentColor"/><circle cx="128" cy="12" r="2" fill="currentColor"/>
+</svg>
+
+<!-- ===================== MUSIC ===================== -->
+<section id="music">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" lang="es">Escúchame &middot; Listen</span>
+      <h2>Where worlds collide</h2>
+      <p class="es" lang="es">Flamenco y bolero con alma de rock.</p>
+    </div>
+
+    <div class="music-reveal reveal">
+      <div class="music-copy">
+        <!-- EDIT: tweak this description in your own voice anytime -->
+        <p class="music-lead">My music is where worlds meet &mdash; the fire of flamenco and the ache of bolero, Spanish and Bollywood rhythms, all set ablaze with rock, metal, and dark pop. Passionate, dramatic, and unafraid to feel everything at once.</p>
+        <ul class="music-genres" aria-label="Genres">
+          <li class="genre-tag">Flamenco</li>
+          <li class="genre-tag">Bolero</li>
+          <li class="genre-tag">Spanish</li>
+          <li class="genre-tag">Bollywood</li>
+          <li class="genre-tag">Rock</li>
+          <li class="genre-tag">Metal</li>
+          <li class="genre-tag">Dark Pop</li>
+        </ul>
+        <a class="btn-gold" href="https://open.spotify.com/artist/3x3EoTGWMY9FsKBB1BTWJx" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm4.6 14.4a.62.62 0 01-.86.21c-2.35-1.44-5.3-1.76-8.79-.96a.62.62 0 11-.28-1.22c3.82-.87 7.09-.5 9.72 1.11.3.18.39.57.21.86zm1.23-2.74a.78.78 0 01-1.07.26c-2.69-1.65-6.79-2.13-9.97-1.17a.78.78 0 11-.45-1.49c3.63-1.1 8.15-.56 11.24 1.33.37.23.48.71.25 1.07zm.11-2.85C14.72 8.94 9.5 8.76 6.42 9.7a.93.93 0 11-.54-1.79c3.53-1.07 9.3-.86 12.97 1.32a.94.94 0 01-.96 1.61z"/></svg>
+          Listen on Spotify
+        </a>
+      </div>
+
+      <div class="music-photo">
+        <img src="reina-singing.jpg" width="1000" height="1000" alt="Reina Acevedo singing at the microphone in a crimson velvet gown and crown" />
       </div>
     </div>
   </div>
