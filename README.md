@@ -19,7 +19,6 @@ links out to her membership and social profiles.
 - **Music** — genre-blending songs (flamenco, bolero, Spanish, Bollywood, rock,
   metal, dark pop) with a Listen on Spotify link.
 - **About the author** — a personal letter from Reina, plus a short bio.
-- **The Court of Love** — membership on Ream.
 - **Follow along** — Facebook, Instagram, X, Goodreads, Spotify, YouTube, TikTok.
 
 Reina Acevedo is an AI persona; all content is created and directed by a human
