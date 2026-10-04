@@ -1,7 +1,7 @@
 # Reina Acevedo — Landing Page
 
 The official landing page for **Reina Acevedo**, an AI persona managed by
-Court of Love Records — an AI author, filmmaker, and singer whose stories,
+Court of Love Media — an AI author, filmmaker, and singer whose stories,
 films, and songs are created and directed by a human artist.
 
 Live at **https://reinaacevedo.com**.
