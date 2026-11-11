@@ -193,6 +193,10 @@
 
   /* --- featured films --- */
   .films{display:grid; grid-template-columns:1fr 1fr; gap:2.2rem; max-width:1000px; margin:0 auto}
+  .film-group{max-width:1000px; margin:0 auto}
+  .film-group + .film-group{margin-top:3.4rem}
+  .film-group-label{display:flex; align-items:center; gap:1rem; margin:0 0 1.6rem; font-family:"Cinzel",serif; font-weight:600; letter-spacing:.22em; text-transform:uppercase; font-size:.72rem; color:var(--gold)}
+  .film-group-label::after{content:""; flex:1; height:1px; background:linear-gradient(90deg, rgba(201,162,75,.5), transparent)}
   .film-card{
     display:flex; flex-direction:column; overflow:hidden; border-radius:9px;
     background:linear-gradient(180deg, rgba(75,15,30,.4), rgba(36,7,16,.55));
@@ -452,51 +456,82 @@
       <p class="es" lang="es">Del corazón a la pantalla.</p>
     </div>
 
-    <div class="films reveal">
-      <!-- Mini series -->
-      <article class="film-card">
-        <a class="film-thumb" href="https://www.youtube.com/playlist?list=PLXm4555Echi0" target="_blank" rel="noopener" aria-label="Watch Mark of the Flame">
-          <img src="mark-of-the-flame.jpg" width="1280" height="714" alt="Mark of the Flame — two sorceresses wielding fire and blood magic against monsters" />
-          <span class="film-badge">Mini Series</span>
-          <span class="film-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
-        </a>
-        <div class="film-body">
-          <span class="film-kicker">Fantasy Drama &middot; Guild Wars&ndash;Inspired</span>
-          <h3 class="film-title">Mark of the Flame</h3>
-          <p class="film-logline">A Guild Wars&ndash;inspired fantasy drama following two sorceresses &mdash; bound by fire and loyalty &mdash; as they face the darkness gathering at the kingdom's edge.</p>
-          <div class="film-actions">
-            <a class="btn-gold sm" href="https://www.youtube.com/playlist?list=PLXm4555Echi0" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-              Watch the series
-            </a>
-            <span class="film-note">On YouTube</span>
+    <!-- Series -->
+    <div class="film-group reveal">
+      <p class="film-group-label">Series</p>
+      <div class="films">
+        <!-- My Customer Support Manager is the Mafia Boss -->
+        <article class="film-card">
+          <a class="film-thumb" href="https://www.youtube.com/playlist?list=PLaBmAELF6ReI" target="_blank" rel="noopener" aria-label="Watch My Customer Support Manager is the Mafia Boss">
+            <img src="mafia-boss.jpg" width="1280" height="720" alt="My Customer Support Manager is the Mafia Boss — a couple against a New York City skyline at dusk" />
+            <span class="film-badge">New Series</span>
+            <span class="film-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          </a>
+          <div class="film-body">
+            <span class="film-kicker">Romance &middot; Mafia Drama</span>
+            <h3 class="film-title">My Customer Support Manager is the Mafia Boss</h3>
+            <p class="film-logline">Rule 1: never miss a ticket. Rule 2: never fall for the boss.</p>
+            <div class="film-actions">
+              <a class="btn-gold sm" href="https://www.youtube.com/playlist?list=PLaBmAELF6ReI" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                Watch the series
+              </a>
+              <span class="film-note">On YouTube</span>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <!-- Short film -->
-      <article class="film-card">
-        <a class="film-thumb" href="https://higgsfield.ai/@reinaacevedo/projects/never-met-always-known" target="_blank" rel="noopener" aria-label="Watch Never Met, Always Known">
-          <img src="never-met-always-known.jpg" width="1280" height="720" alt="Never Met, Always Known — two gamers meeting face to face, a Higgsfield Global Film Festival entry" />
-          <span class="film-badge">Short Film</span>
-          <span class="film-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
-        </a>
-        <div class="film-body">
-          <span class="film-kicker">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 19.3 7.2 21.7l.9-5.4L4.2 8.7l5.4-.8z"/></svg>
-            Higgsfield Global Film Festival &middot; 2026
-          </span>
-          <h3 class="film-title">Never Met, Always Known</h3>
-          <p class="film-logline">Two gamers. One MMORPG. Never met in real life &mdash; until a gaming club's grand opening in New York City puts them face to face.</p>
-          <div class="film-actions">
-            <a class="btn-gold sm" href="https://higgsfield.ai/@reinaacevedo/projects/never-met-always-known" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-              Watch the film
-            </a>
-            <span class="film-note">A festival entry</span>
+        <!-- Mark of the Flame -->
+        <article class="film-card">
+          <a class="film-thumb" href="https://www.youtube.com/playlist?list=PLXm4555Echi0" target="_blank" rel="noopener" aria-label="Watch Mark of the Flame">
+            <img src="mark-of-the-flame.jpg" width="1280" height="714" alt="Mark of the Flame — two sorceresses wielding fire and blood magic against monsters" />
+            <span class="film-badge">Mini Series</span>
+            <span class="film-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          </a>
+          <div class="film-body">
+            <span class="film-kicker">Fantasy Drama &middot; Guild Wars&ndash;Inspired</span>
+            <h3 class="film-title">Mark of the Flame</h3>
+            <p class="film-logline">A Guild Wars&ndash;inspired fantasy drama following two sorceresses &mdash; bound by fire and loyalty &mdash; as they face the darkness gathering at the kingdom's edge.</p>
+            <div class="film-actions">
+              <a class="btn-gold sm" href="https://www.youtube.com/playlist?list=PLXm4555Echi0" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                Watch the series
+              </a>
+              <span class="film-note">On YouTube</span>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
+    </div>
+
+    <!-- Short Films -->
+    <div class="film-group reveal">
+      <p class="film-group-label">Short Films</p>
+      <div class="films">
+        <!-- Never Met, Always Known -->
+        <article class="film-card">
+          <a class="film-thumb" href="https://higgsfield.ai/@reinaacevedo/projects/never-met-always-known" target="_blank" rel="noopener" aria-label="Watch Never Met, Always Known">
+            <img src="never-met-always-known.jpg" width="1280" height="720" alt="Never Met, Always Known — two gamers meeting face to face, a Higgsfield Global Film Festival entry" />
+            <span class="film-badge">Short Film</span>
+            <span class="film-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          </a>
+          <div class="film-body">
+            <span class="film-kicker">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 19.3 7.2 21.7l.9-5.4L4.2 8.7l5.4-.8z"/></svg>
+              Higgsfield Global Film Festival &middot; 2026
+            </span>
+            <h3 class="film-title">Never Met, Always Known</h3>
+            <p class="film-logline">Two gamers. One MMORPG. Never met in real life &mdash; until a gaming club's grand opening in New York City puts them face to face.</p>
+            <div class="film-actions">
+              <a class="btn-gold sm" href="https://higgsfield.ai/@reinaacevedo/projects/never-met-always-known" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                Watch the film
+              </a>
+              <span class="film-note">A festival entry</span>
+            </div>
+          </div>
+        </article>
+      </div>
     </div>
   </div>
 </section>
